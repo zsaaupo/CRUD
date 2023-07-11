@@ -20,6 +20,9 @@ from Student.views import *
 
 urlpatterns = [
     path('CRUD/add', Create.as_view()),
-    path('CRUD/retrieve', Retrieve.as_view()),
+    path('CRUD/retrieve/<str:full_name>', Retrieve.as_view()),
+    path('CRUD/edit/<str:full_name>', Edit.as_view()),
+    path('CRUD/delete/<str:full_name>', Delete.as_view()),
+    path('CRUD/retrieve', RetrieveAll.as_view()),
     path('admin/', admin.site.urls),
 ]
